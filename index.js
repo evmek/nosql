@@ -2468,7 +2468,7 @@ function addGenarators(base,cbName){
 
         base["$$" + fnName] = eval("(function(" + a1 + "){var self=this;return function(" + cbName + "){return self." + fnName + "(" + a2 + ")}})");
 
-        base["sync"+fnName[0].toUpperCase()+fnName.slice(1)] = eval("(function("+a1+"){var self=this;return sync(self.$$"+fnName+"("+a1+"))})");
+        base[fnName+"Sync"] = eval("(function("+a1+"){var self=this;return sync(self.$$"+fnName+"("+a1+"))})");
     };
 };
 
